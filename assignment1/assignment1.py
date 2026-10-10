@@ -172,90 +172,6 @@ def pig_latin(string):
 
 
 
-# print("1  ", pig_latin("apple"))
-# print("2  ", pig_latin("banana"))
-# print("3  ", pig_latin("cherry"))
-# print("4  ", pig_latin("quiet"))
-# print("5  ", pig_latin("square"))
-print(pig_latin("the quick brown fox"))
-
-
-
-
-
-
-
-
-
-# def pig_latin(string):
-#     cons=['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-#     vowels=['a', 'e', 'i', 'o', 'u']
-#     # result1=re.findall(r'qu|.', string)
-#     # print (result1)
-#     # word_list=list(string)
-#     word_list=re.findall(r"qu|.", string)
-#     sp_case=['qu']
-#     upd_word=[]
-#     param=False
-#     sp_index=0
-
-#     if "qu" in word_list:
-
-#         for num in range (len(word_list)):
-#             if word_list[num] in sp_case:
-#                 sp_index=num
-#                 # upd_word=
-                
-#         for el in word_list:
-            
-#             upd_word.append(el[sp_index:]+el[:sp_index]+"ay")
-#         return upd_word
-
-
-#     if word_list[0] in vowels:
-#         for el in word_list:
-#             upd_word.append(el)
-#         upd_word.append("ay")
-#         upd_word="".join(upd_word)
-#         return upd_word
-    
-    
-            
-#     # elif word_list[]
-#     elif word_list[0] in cons and word_list[1] in vowels:
-#         for i in range(1, len(word_list)):
-#             upd_word.append(word_list[i])
-#         upd_word.append("ay")
-#         upd_word.append(word_list[0])
-#         upd_word="".join(upd_word)
-    
-
-    
-#     elif word_list[0] in cons and word_list[1] in cons:
-#         for i in range(2, len(word_list)):
-#             upd_word.append(word_list[i])
-        
-#         upd_word.append("ay")
-#         upd_word.append(word_list[0])
-#         upd_word.append(word_list[1])
-#         upd_word.append("ay")
-#         upd_word="".join(upd_word)
-#     return upd_word
-# # if param==True:
-
-
-#         # quapple
-#         # appque
-
-
-# # apple") == "appleay"
-# # banana") == "ananabay"
-# print("1  ", pig_latin("apple"))
-# print("2  ", pig_latin("banana"))
-# print("3  ", pig_latin("cherry"))
-# print("4  ", pig_latin("quiet"))
-# print("5  ", pig_latin("square"))
-
 
 
 
@@ -272,3 +188,10 @@ print(pig_latin("the quick brown fox"))
 # print(student_scores("best", Tom=75, Dick=89, Angela=91, Frank=50))
 # print(titleize("a and peace"))
 # print(hangman("difficulty", "ic"))
+
+# print( pig_latin("apple"))
+# print( pig_latin("banana"))
+# print(pig_latin("cherry"))
+# print( pig_latin("quiet"))
+# print(pig_latin("square"))
+# print(pig_latin("the quick brown fox"))
