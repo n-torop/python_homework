@@ -104,3 +104,96 @@ def get_this_value():
 # get_this_value()
 
 #Task 11
+import custom_module
+def set_that_secret(upd_secret):
+    custom_module.set_secret(upd_secret)
+    return custom_module.secret
+# print(set_that_secret("ice cream"))
+
+#Task 12
+def read_minutes():
+    min1_dict={}
+    min1_list=[]
+
+    min2_dict={}
+    min2_list=[]
+
+    data_file1="../csv/minutes1.csv"
+    data_file2="../csv/minutes2.csv"
+
+    with open(data_file1, "r") as file1:
+        reader=csv.reader(file1)
+        for index, row in enumerate(reader):
+            if index==0:
+                min1_dict["fields"]=row
+            if index!=0:
+                min1_list.append(tuple(row))
+        min1_dict["rows"]=min1_list
+
+    with open(data_file2, "r") as file2:
+        reader=csv.reader(file2)
+        for index, row in enumerate(reader):
+            if index==0:
+                min2_dict["fields"]=row
+            if index!=0:
+                min2_list.append(tuple(row))
+        min2_dict["rows"]=min2_list
+    
+    return min1_dict, min2_dict
+   
+minutes1, minutes2=read_minutes()
+
+# Task 13
+def create_minutes_set():
+    joint_set=set()
+    for key, val in minutes1.items():
+        if type(val)==list:
+            min1_set=set(val)
+
+    for key, val in minutes2.items():
+        if type(val)==list:
+            min2_set=set(val)
+    joint_set=min1_set.union(min2_set)
+    return joint_set
+
+
+minutes_set=create_minutes_set()
+# print(minutes_set)
+
+#Task 14
+from datetime import datetime
+
+def create_minutes_list():
+    new_list=[]
+    upd_minutes_list=list(minutes_set)
+    def convert(string):
+        return datetime.strptime(string, "%B %d, %Y")
+
+    for name, date in upd_minutes_list:
+        date_converted=convert(date)
+        tuple_pair=(name, date_converted)
+        new_list.append(tuple_pair)
+    return new_list
+               
+minutes_list=create_minutes_list()
+# print(minutes_list)
+
+#Task 15
+def write_sorted_list():
+    sorted_list=[]
+    def convert(og_date):
+        return datetime.strftime(og_date, "%B %d, %Y")
+    sorted_data=sorted(minutes_list, key=lambda tup: tup[1])
+    # print (sorted_data)
+    for name, date in sorted_data:
+        date_converted=convert(date)
+        tuple_pair=(name, date_converted)
+        sorted_list.append(tuple_pair)
+
+    with open ("./minutes.csv", "w", newline="") as file:
+        writer=csv.writer(file)
+        writer.writerow()
+    # return sorted_list
+
+
+# print(write_sorted_list())
