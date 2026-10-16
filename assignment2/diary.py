@@ -6,9 +6,10 @@ try:
     with open("diary.txt", "a") as file:
         file.write(user_submit+"\n")
         while True:
-        
-            continued_input=input('Type "Done for now" if you want to exit.\nWhat else? ')
+        # Type "Done for now" if you want to exit.\n
+            continued_input=input('What else? ')
             if continued_input.lower()=="done for now":
+                file.write(continued_input+"n")
                 break
             file.write(continued_input+"\n")
 
