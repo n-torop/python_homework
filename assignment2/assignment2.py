@@ -189,11 +189,13 @@ def write_sorted_list():
         date_converted=convert(date)
         tuple_pair=(name, date_converted)
         sorted_list.append(tuple_pair)
-
+  
     with open ("./minutes.csv", "w", newline="") as file:
         writer=csv.writer(file)
-        writer.writerow()
-    # return sorted_list
+        writer.writerow(minutes1["fields"])
+        writer.writerows(sorted_list)
+    
+    return sorted_list
 
 
-# print(write_sorted_list())
+print(write_sorted_list())
