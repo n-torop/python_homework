@@ -1,0 +1,12 @@
+function:simple_function
+positional parameters: none
+keyword parameters: none
+return: None 
+function:bool_func
+positional parameters: (5, 10, 'str')
+keyword parameters: none
+return: True 
+function:func_no_arg
+positional parameters: none
+keyword parameters: {'name': 'Natasha'}
+return: <function logger_decorator at 0x100c95dd0> 
