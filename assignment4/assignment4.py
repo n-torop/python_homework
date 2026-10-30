@@ -69,7 +69,6 @@ clean_data=clean_data.replace(placeholders, np.nan)
 print (clean_data)
 mean_score=clean_data["Age"].mean()
 clean_data["Age"]=clean_data["Age"].fillna(mean_score)
-clean_data["Salary"]=clean_data["Salary"].fillna(mean_score)
 clean_data["Salary"]=clean_data["Salary"].fillna(clean_data["Salary"].median())
 print (clean_data)
 
