@@ -53,7 +53,7 @@ last_two=more_employees.tail(2)
 employee_shape=more_employees.shape
 # print(employee_shape)
 
-# print (more_employees.info())
+print (more_employees.info())
 
 #TASK 4
 dirty_data=pd.read_csv("dirty_data.csv")
